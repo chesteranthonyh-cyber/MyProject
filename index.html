@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth; /* makes clicking links scroll smoothly */
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f9fa;
+      color: #362d36;
+      line-height: 1.6;
+    }
+
+    
+    nav {
+      background-color: #c209e3;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav h1 {
+      color: white;
+      font-size: 1.5em;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #dfe6e9;
+    }
+
+   
+    header {
+      text-align: center;
+      background: linear-gradient(135deg, #d874ff, #a29bfe);
+      color: white;
+      padding: 80px 20px;
+    }
+
+    header img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid white;
+      margin-bottom: 15px;
+    }
+
+    header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.3em;
+      margin-bottom: 5px;
+    }
+
+    header h3 {
+      font-weight: 400;
+      margin-bottom: 15px;
+    }
+
+    .hero-buttons a {
+      text-decoration: none;
+      color: #c609e3;
+      background: white;
+      padding: 10px 25px;
+      border-radius: 30px;
+      font-weight: 600;
+      margin: 5px;
+      transition: 0.3s;
+    }
+
+    .hero-buttons a:hover {
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+    }
+
+   
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section h2 {
+      text-align: center;
+      color: #2d3436;
+      margin-bottom: 30px;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8em;
+    }
+
+    section p {
+      text-align: center;
+      color: #555;
+      max-width: 800px;
+      margin: auto;
+    }
+
+
+    #about {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 50px 30px;
+      margin-top: 40px;
+    }
+
+    #about .about-content {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    #about img {
+      width: 220px;
+      height: 220px;
+      border-radius: 15px;
+      object-fit: cover;
+      border: 3px solid #b009e3;
+    }
+
+    #about .text {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    #about .text h3 {
+      font-size: 1.5em;
+      color: #9709e3;
+      margin-bottom: 15px;
+    }
+
+    #about .text p {
+      text-align: justify;
+      color: #555;
+    }
+
+    /* PROJECTS */
+    #projects .projects {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .project-box {
+      background: white;
+      padding: 20px;
+      width: 270px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .project-box:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-box h3 {
+      color: #8c09e3;
+      margin-bottom: 10px;
+    }
+
+  
+    #services .services {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .service-box {
+      background: white;
+      padding: 20px;
+      width: 270px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .service-box h3 {
+      color: #8c09e3;
+      margin-bottom: 10px;
+    }
+
+
+    #contact {
+      background: #ac09e3;
+      color: white;
+      border-radius: 15px;
+      padding: 60px 30px;
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    #contact h2 {
+      color: white;
+    }
+
+    #contact p {
+      color: #f1f1f1;
+      margin-bottom: 20px;
+    }
+
+    .contact-buttons a {
+      text-decoration: none;
+      padding: 10px 25px;
+      margin: 5px;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    .contact-buttons .primary {
+      background: white;
+      color: #8c09e3;
+      border: 2px solid white;
+    }
+
+    .contact-buttons .primary:hover {
+      background: transparent;
+      color: white;
+    }
+
+    .contact-buttons .secondary {
+      background: transparent;
+      border: 2px solid white;
+      color: rgb(255, 255, 255);
+    }
+
+    .contact-buttons .secondary:hover {
+      background: white;
+      color: #b409e3;
+    }
+
+    footer {
+      background: #2d3436;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      margin-top: 40px;
+      font-size: 0.9em;
+    }
+
+  
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        background-color: #9e09e3;
+        text-align: center;
+        padding: 10px 0;
+      }
+
+      .project-box, .service-box {
+        width: 100%;
+        max-width: 350px;
+      }
+
+      #about .about-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      #about img {
+        width: 150px;
+        height: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+ 
+  <nav>
+    <h1>My Portfolio</h1>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+ 
+  <header id="home">
+    <img src="IT world.png" alt="Your Photo">
+    <h2>Aspiring Web Developer</h2>
+    <h3>| Designer | </h3>
+    <div class="hero-buttons">
+      <a href="#projects">View Projects</a>
+      <a href="#contact">Get in Touch</a>
+    </div>
+  </header>
+
+
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="about-content">
+      <img src="my image.png" alt="About Me Photo">
+      <div class="text">
+        <h3> Hi, I'm Jocelle Anne Valencia!</h3>
+        <p>
+          Hi! I’m an IT student exploring the world of web development.
+          I'm still improving my skills, but i enjoy creating and experimenting with websites.
+          I've already made a few projects that helped me understand how websites work, and I'm excited to learn more 
+          about coding and design as i continue my journey.
+          
+        </p>
+      </div>
+    </div>
+  </section>
+
+ 
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects">
+    <div class="project-box">
+      <img src="jocelle.png" alt="Portfolio Website" style="width:100%; border-radius:10px; margin-bottom:10px;">
+      <h3>E-commerce Website</h3>
+      <p>I already created an E-commerce website using PowerPoint as part of my web development practice.</p>
+    </div>
+
+    <div class="project-box">
+      <img src="chester.png" alt="Landing Page Project" style="width:100%; border-radius:10px; margin-bottom:10px;">
+      <h3>Business Logo</h3>
+      <p>I gained hands-on experience in developing a system program using visual studio to enchance my programming skills.</p>
+    </div>
+
+    
+</section>
+
+ 
+  <section id="services">
+    <h2>Hobbies</h2>
+    <div class="services">
+      <div class="service-box">
+        <h3>Drawing</h3>
+        <p>I’m a girl who sees the world a little differently—through colors, shapes, and lines.
+           Drawing and creating art isn’t just something I do;
+            it’s how I express myself when words fall short.</p>
+      </div>
+      <div class="service-box">
+        <h3>Watching Anime</h3>
+        <p>It allows me to explore different cultures, values, 
+          and perspectives while also sparking my imagination and creativity.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="services">
+      <div class="service-box">
+        <h3>Playing Online Games</h3>
+        <p>Playing online games helps me relax, sharpen my strategic thinking, 
+          and connect with others, but sometimes I get frustrated because of my teammates.</p>
+      </div>
+      <div class="service-box">
+        <h3>Reading Manga</h3>
+        <p>Reading manga is one of my favorite pastimes, 
+          as it allows me to relax while exploring a wide variety
+           of creative and inspiring stories.</p>
+      </div>
+    </div>
+  </section>
+
+  
+  <section id="contact">
+    <h2>Get In Touch</h2>
+    <p>Feel free to reach out for collaborations</p>
+    <div class="contact-buttons">
+      <a href="mailto:jocelleanne26@gmail.com" class="primary">Send Email</a>
+      <a href="https://www.facebook.com/jocelleann.valencia" class="secondary" target="_blank">Message on Facebook</a>
+    </div>
+  </section>
+
+  
+
+  <footer>
+    © 2025 jcelle val — All Rights Reserved
+  </footer>
+
+</body>
+</html>
